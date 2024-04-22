@@ -1,0 +1,85 @@
+@use "./../../../scss" as *;
+
+.closeButton {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    border-radius: 0.25rem;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    color: $clr-dark;
+
+    cursor: pointer;
+
+    transition:
+        color 250ms,
+        outline-color 250ms;
+
+    &:hover {
+        color: lighten($color: $clr-dark, $amount: 15);
+    }
+
+    &:focus {
+        color: $clr-primary;
+        outline: 2px solid currentColor;
+        outline-offset: 1px;
+
+        &:hover {
+            color: lighten($color: $clr-primary, $amount: 15);
+        }
+    }
+
+    svg {
+        color: inherit;
+
+        transition:
+            fill 250ms,
+            stroke 250ms;
+
+        width: 100%;
+        height: 100%;
+
+        fill: currentColor;
+        stroke: currentColor;
+    }
+}
+
+.content {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    position: relative;
+
+    padding: 3rem 2.5rem;
+
+    outline: none;
+    border: none;
+
+    width: min(32rem, 95%);
+    height: min(32rem, 95%);
+    background-color: $clr-secondary;
+
+    border-radius: 10px;
+
+    &:focus-within {
+        outline: 2px solid $clr-primary;
+        outline-offset: -1px;
+    }
+}

@@ -1,0 +1,132 @@
+@use "./../../scss" as *;
+
+$clr-control: $clr-primary;
+$clr-bg: lighten(
+    $color:
+        desaturate(
+            $color: $clr-primary,
+            $amount: 25,
+        ),
+    $amount: 12,
+);
+
+.switch {
+    position: relative;
+    display: inline-block;
+    background-color: $clr-bg;
+    border-radius: 0.75rem;
+    height: 1rem;
+    width: 2.625rem;
+
+    border: none;
+
+    transition:
+        color 250ms,
+        background-color 250ms,
+        border-color 250ms,
+        outline-color 250ms,
+        left 250ms;
+
+    span {
+        position: absolute;
+        box-sizing: border-box;
+        top: calc(50% - 0.75rem);
+        left: -0.125rem;
+        display: inline-block;
+        border-radius: 50%;
+        height: 1.5rem;
+        width: 1.5rem;
+
+        color: $clr-control;
+
+        border: 0.125rem solid currentColor;
+        background-color: currentColor;
+
+        transition: inherit;
+    }
+
+    .privateInput:checked ~ & {
+        span {
+            left: 1.375rem;
+        }
+    }
+}
+
+.label {
+    margin: 0;
+    font-size: inherit;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: 0.001em;
+}
+
+.privateInput {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.container {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    gap: 0.5rem;
+
+    box-sizing: border-box;
+
+    font-size: 1rem;
+
+    &:has(.privateInput:not(:disabled)) {
+        cursor: pointer;
+
+        * {
+            cursor: pointer;
+        }
+
+        .label {
+            color: $clr-dark;
+        }
+
+        &:hover {
+            .switch {
+                background-color: lighten($color: $clr-bg, $amount: 5);
+
+                span {
+                    color: lighten($color: $clr-control, $amount: 10);
+                }
+            }
+
+            .label {
+                color: lighten($color: $clr-dark, $amount: 10);
+            }
+        }
+
+        .privateInput:focus ~ .switch {
+            outline: none;
+
+            span {
+                outline-offset: 0.0625rem;
+                outline: 0.125rem solid currentColor;
+            }
+        }
+    }
+
+    &:has(.privateInput:disabled) {
+        .switch {
+            background-color: lighten($color: $clr-bg, $amount: 10);
+
+            span {
+                color: lighten($color: $clr-control, $amount: 15);
+            }
+        }
+
+        .label {
+            color: lighten($color: $clr-dark, $amount: 20);
+        }
+    }
+}
