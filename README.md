@@ -9,16 +9,16 @@
 npm i RC-3222/swiss-cheese-lib
 ```
 2. As anything else:
-    - clone the repo by running `git clone https://github.com/RC-3222/swiss-cheese-lib.git`
+    - Clone the repo by running `git clone https://github.com/RC-3222/swiss-cheese-lib.git`
     - Open it in your code editor (or a terminal).
     - Run `npm install` to install all the dependencies.
     - And then you have multiple options:
-        1. `npm run build` - build the lib for distribution and puts the results to `dist` folder
+        1. `npm run build` - build the lib for distribution (results are stored in `dist` folder)
         2. `npm run storybook` - explore the lib via interactive storybook
         2. `npm run test` - run the tests
 
 
-## App Structure
+## Project Structure
 
 ```
 📦dist                            # Built lib content that actually gets distributed.
