@@ -1,5 +1,5 @@
-import { ComponentProps, ReactNode } from "react";
-export type ButtonProps = Omit<ComponentProps<"button">, "ref"> & {
+import { ComponentPropsWithoutRef, ReactNode } from "react";
+export type ButtonProps = ComponentPropsWithoutRef<"button"> & {
     /** Button variant */
     variant?: "text" | "contained" | "outlined";
     /** Button size */

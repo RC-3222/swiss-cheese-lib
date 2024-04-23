@@ -1,10 +1,10 @@
-import React, { ComponentProps } from "react";
+import React, { ComponentPropsWithoutRef } from "react";
 
 import Icon from "./checked-icon.svg";
 
 import styles from "./checkbox.module.scss";
 
-export type CheckboxProps = Omit<ComponentProps<"input">, "onChange" | "checked" | "ref"> & {
+export type CheckboxProps = Omit<ComponentPropsWithoutRef<"input">, "onChange" | "checked"> & {
     /** Is checkbox checked */
     checked: boolean;
     /** Checkbox status change handler */

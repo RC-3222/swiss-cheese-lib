@@ -1,10 +1,10 @@
-import React, { ComponentProps, ReactNode } from "react";
+import React, { ComponentPropsWithoutRef, ReactNode } from "react";
 
 import classnames from "classnames";
 
 import styles from "./button.module.scss";
 
-export type ButtonProps = Omit<ComponentProps<"button">, "ref"> & {
+export type ButtonProps = ComponentPropsWithoutRef<"button"> & {
     /** Button variant */
     variant?: "text" | "contained" | "outlined";
     /** Button size */

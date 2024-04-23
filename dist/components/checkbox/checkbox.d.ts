@@ -1,5 +1,5 @@
-import { ComponentProps } from "react";
-export type CheckboxProps = Omit<ComponentProps<"input">, "onChange" | "checked" | "ref"> & {
+import { ComponentPropsWithoutRef } from "react";
+export type CheckboxProps = Omit<ComponentPropsWithoutRef<"input">, "onChange" | "checked"> & {
     /** Is checkbox checked */
     checked: boolean;
     /** Checkbox status change handler */

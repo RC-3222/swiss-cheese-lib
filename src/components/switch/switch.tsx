@@ -1,8 +1,8 @@
-import React, { ComponentProps } from "react";
+import React, { ComponentPropsWithoutRef } from "react";
 
 import styles from "./switch.module.scss";
 
-export type SwitchProps = Omit<ComponentProps<"input">, "ref"> & {
+export type SwitchProps = ComponentPropsWithoutRef<"input"> & {
     /** Switch status change handler */
     onChange?: (checked: boolean) => void;
     /** Switch status variable */

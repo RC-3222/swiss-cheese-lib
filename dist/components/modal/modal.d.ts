@@ -5,7 +5,7 @@ export type ModalProps = Omit<ComponentProps<"dialog">, "open" | "onClose" | "re
     /** Modal close handler */
     onClose: () => void;
     /** Use default content wrapper provided by modal */
-    hasDefaultCotentWrapper?: false;
+    hasDefaultContentWrapper?: false;
 };
 /** Custom modal component */
-export declare const Modal: ({ open, children, onClose, hasDefaultCotentWrapper, ...props }: ModalProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Modal: ({ open, children, onClose, hasDefaultContentWrapper, ...props }: ModalProps) => import("react/jsx-runtime").JSX.Element;

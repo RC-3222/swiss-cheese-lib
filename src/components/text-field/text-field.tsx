@@ -1,9 +1,9 @@
-import React, { ComponentProps, ReactNode } from "react";
+import React, { ComponentPropsWithoutRef, ReactNode } from "react";
 
 import styles from "./text-field.module.scss";
 import classNames from "classnames";
 
-export type TextFieldProps = Omit<ComponentProps<"input">, "value" | "onChange"> & {
+export type TextFieldProps = Omit<ComponentPropsWithoutRef<"input">, "value" | "onChange"> & {
     /** Input label */
     value: string;
     /** Input change handler */

@@ -1,5 +1,5 @@
-import { ComponentProps, ReactNode } from "react";
-export type TextFieldProps = Omit<ComponentProps<"input">, "value" | "onChange"> & {
+import { ComponentPropsWithoutRef, ReactNode } from "react";
+export type TextFieldProps = Omit<ComponentPropsWithoutRef<"input">, "value" | "onChange"> & {
     /** Input label */
     value: string;
     /** Input change handler */

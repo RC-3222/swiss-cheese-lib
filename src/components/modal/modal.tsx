@@ -16,7 +16,7 @@ export type ModalProps = Omit<ComponentProps<"dialog">, "open" | "onClose" | "re
     /** Modal close handler */
     onClose: () => void;
     /** Use default content wrapper provided by modal */
-    hasDefaultCotentWrapper?: false;
+    hasDefaultContentWrapper?: false;
 };
 
 /** Custom modal component */
@@ -24,7 +24,7 @@ export const Modal = ({
     open,
     children,
     onClose,
-    hasDefaultCotentWrapper = false,
+    hasDefaultContentWrapper = false,
     ...props
 }: ModalProps) => {
     const trigger = useRef<HTMLElement | null>(null);
@@ -114,7 +114,7 @@ export const Modal = ({
                 onKeyDown={moveFocusToEnd}
                 onClick={handleBackdropClick}
             >
-                {hasDefaultCotentWrapper ? (
+                {hasDefaultContentWrapper ? (
                     <ContentWrapper onClose={onClose}>{children}</ContentWrapper>
                 ) : (
                     children

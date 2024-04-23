@@ -26,7 +26,7 @@ const meta = {
     },
     tags: ["autodocs"],
     argTypes: {
-        hasDefaultCotentWrapper: {
+        hasDefaultContentWrapper: {
             type: "boolean",
         },
     },
@@ -46,7 +46,7 @@ export const Default: Story = {
         const [storyArgs, updateStoryArgs] = useArgs<ModalProps>();
 
         const modalChildren = args.children ?? (
-            <div style={{ background: args.hasDefaultCotentWrapper ? "none" : "white" }}>
+            <div style={{ background: args.hasDefaultContentWrapper ? "none" : "white" }}>
                 <h2>Hello there!</h2>,<p>This is an example of modal content</p>,
                 <button onClick={() => updateStoryArgs({ open: false })}>ok</button>,
             </div>
